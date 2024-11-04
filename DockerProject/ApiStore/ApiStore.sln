@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiStore", "ApiStore\ApiStore.csproj", "{F5EE26EB-AB84-441D-AC30-8B73C01DCBDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleSimpleBot", "ConsoleSimpleBot\ConsoleSimpleBot.csproj", "{86A2AEB9-48DA-4A5D-AC16-F8F3BB5C853B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5EE26EB-AB84-441D-AC30-8B73C01DCBDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5EE26EB-AB84-441D-AC30-8B73C01DCBDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5EE26EB-AB84-441D-AC30-8B73C01DCBDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5EE26EB-AB84-441D-AC30-8B73C01DCBDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86A2AEB9-48DA-4A5D-AC16-F8F3BB5C853B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86A2AEB9-48DA-4A5D-AC16-F8F3BB5C853B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86A2AEB9-48DA-4A5D-AC16-F8F3BB5C853B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86A2AEB9-48DA-4A5D-AC16-F8F3BB5C853B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E23DE99B-8430-432C-AB09-C4FA6EE1DA29}
+	EndGlobalSection
+EndGlobal

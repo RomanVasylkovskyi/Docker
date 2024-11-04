@@ -1,0 +1,9 @@
+sudo su
+sudo nano /etc/ssh/sshd_config
+PermitRootLogin yes
+sudo service ssh restart
+nano ~/.ssh/authorized_keys
+REMOVE All text to ssh-rsa
+systemctl restart ssh 
+------Тепер можна конектитися через моду із рута------
+ifconfig

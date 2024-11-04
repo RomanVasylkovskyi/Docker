@@ -1,0 +1,19 @@
+docker pull postgres:16.1
+
+docker images
+
+docker run --name container-postgres \
+	--restart=always \
+	-e POSTGRES_PASSWORD=p%rSDj4Imds07djc**dmUntdOidd3dZ_#WTi4B9Zo \
+	-e POSTGRES_USER=krot \
+	-p 5022:5432 \
+	-v /data/postgresql/data:/var/lib/postgresql/data \
+	-d postgres:16.1
+
+docker ps
+docker ps -a
+
+docker stop container-postgres
+docker rm container-postgres
+
+docker rmi postgres

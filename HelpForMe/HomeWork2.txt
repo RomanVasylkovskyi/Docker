@@ -1,0 +1,5 @@
+Ваш проект ASP.NET Core Web Api підключити до БД Postgres, яка розгортається у Вас в Docker.
+На 12 балів зробити Docker file для Вашого проекту.
+На основі даного файлу зробити docker image.
+Даний docker image завантажити на DockerHub.
+На AWS підняти ваш container ASP.NET Core.

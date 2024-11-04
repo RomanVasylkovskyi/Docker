@@ -1,0 +1,15 @@
+-------Step 1 Ц Installing Nginx-----------
+sudo apt update
+sudo apt install nginx
+
+-------Step 2 Ц Adjusting the Firewall--------------------------
+sudo ufw app list
+sudo ufw allow 'Nginx HTTP'
+sudo ufw status
+
+-------Step 3 Ц Checking your Web Server-----------------------
+systemctl status nginx
+http://your_server_ip
+
+
+3.70.96.72

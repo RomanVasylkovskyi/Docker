@@ -1,0 +1,5 @@
+apt-get update
+apt-get install snapd
+snap --version
+sudo snap install --classic certbot
+certbot

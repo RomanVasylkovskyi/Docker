@@ -1,0 +1,48 @@
+version: "3.9"
+networks:
+  myAppNetwork:
+    driver: bridge
+
+services:
+  postgresServerDb:
+    container_name: container-postgres
+    image: postgres:16.1
+    ports:
+      - "5022:5432"
+    environment:
+      - POSTGRES_USER=krot
+      - POSTGRES_PASSWORD=p%rSDj4Imds07djc**dmUntdOidd3dZ_#WTi4B9Zo
+      - POSTGRES_DB=ApiStorePD322
+    networks:
+      - myAppNetwork
+    volumes:
+#       - d:/web/pd322/postgresql:/var/lib/postgresql/data  # Use the volume name msvol here
+        - /data/postgresql/data:/var/lib/postgresql/data
+    deploy:
+      restart_policy:
+        condition: on-failure
+        max_attempts: 5
+
+  app:
+    container_name: web_pd322_container
+    image: novakvova/pd322-asp-api
+    ports:
+      - "5817:8080"
+    networks:
+      - myAppNetwork
+    depends_on:
+      - postgresServerDb
+    volumes:
+     - /volumes/pd322-asp/images:/app/images  # Use the volume name appvol here
+    deploy:
+      restart_policy:
+        condition: on-failure
+        max_attempts: 5
+  
+  client:
+    container_name: pd322_client_container
+    image: novakvova/storepd322-client
+    ports:
+      - "5092:80"
+      
+
