@@ -1,0 +1,39 @@
+﻿@using System.Diagnostics
+@model ProductHomeViewModel
+
+@{
+    Stopwatch stopWatch = new Stopwatch();
+    stopWatch.Start();
+}
+
+<div class="container mt-3 mb-5">
+    <h2 class="text-center">Продукти</h2>
+
+    @await Html.PartialAsync("_ProductSearchItems", Model.Search)
+
+    <h4>Усіх записів: @Model.Count</h4>
+    @await Html.PartialAsync("_PaginationProducts", Model)
+
+    @await Html.PartialAsync("_ListProducts", Model.Products)
+    
+    @await Html.PartialAsync("_PaginationProducts", Model)
+
+    @* <a asp-action="Create" class="btn btn-secondary my-3">Додати</a> *@
+
+</div>
+
+
+
+
+@{
+    stopWatch.Stop();
+    // Get the elapsed time as a TimeSpan value.
+    TimeSpan ts = stopWatch.Elapsed;
+
+    // Format and display the TimeSpan value.
+    string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
+        ts.Hours, ts.Minutes, ts.Seconds,
+        ts.Milliseconds / 10);
+
+    Console.WriteLine("RunTime ProductsController Index View - " + elapsedTime);
+}

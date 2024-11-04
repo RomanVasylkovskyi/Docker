@@ -7,50 +7,6 @@ cd client-store
 npm install
 npm run dev
 
-docker build -t storepd322-client .
-
-docker run -it --rm -p 5092:80 --name storepd322-client_container storepd322-client
-docker run -d --restart=always --name storepd322-client_container -p 5092:80 storepd322-client
-docker run -d --restart=always --name storepd322-client_container -p 5092:80 storepd322-client
-docker run -d --restart=always --name storepd322-client_container -p 5092:80 storepd322-client
-docker ps -a
-docker stop storepd322-client_container
-docker rm storepd322-client_container
-
-docker images --all
-docker rmi storepd322-client-api
-
-
- 
-docker login
-docker tag storepd322-client:latest novakvova/storepd322-client:latest
-docker push novakvova/storepd322-client:latest
-
-docker pull novakvova/storepd322-client:latest
-docker images --all
-docker run -d --restart=always --name storepd322-client_container -p 5092:80 novakvova/storepd322-client
-
-```
-
-```nginx options /etc/nginx/sites-available/default
-
-server {
-
-	server_name   storepd322.itstep.click *.storepd322.itstep.click;
-    location / {
-       proxy_pass         http://localhost:5092;
-       proxy_http_version 1.1;
-       proxy_set_header   Upgrade $http_upgrade;
-       proxy_set_header   Connection keep-alive;
-       proxy_set_header   Host $host;
-       proxy_cache_bypass $http_upgrade;
-       proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;
-       proxy_set_header   X-Forwarded-Proto $scheme;
-    }
-}
-
-sudo systemctl restart nginx
-certbot
 ```
 
 

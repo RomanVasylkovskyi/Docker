@@ -6,7 +6,6 @@ using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.Formats.Jpeg;
 using SixLabors.ImageSharp.Formats.Webp;
@@ -76,15 +75,6 @@ namespace ApiStore.Controllers
                 .ProjectTo<CategoryItemViewModel>(mapper.ConfigurationProvider)
                 .SingleOrDefault(x=>x.Id==id);
             return Ok(item);
-        }
-
-        [HttpGet("names")]
-        public async Task<IActionResult> GetCategoriesNames()
-        {
-            var result = await context.Categories
-            .ProjectTo<SelectItemViewModel>(mapper.ConfigurationProvider)
-            .ToListAsync();
-            return Ok(result);
         }
     }
 }

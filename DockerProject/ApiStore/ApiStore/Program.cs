@@ -95,11 +95,11 @@ app.UseCors(opt =>
     opt.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 
 // Configure the HTTP request pipeline.
-//if (app.Environment.IsDevelopment())
-//{
+if (app.Environment.IsDevelopment())
+{
     app.UseSwagger();
     app.UseSwaggerUI();
-//}
+}
 
 string imagesDirPath = Path.Combine(Directory.GetCurrentDirectory(), builder.Configuration["ImagesDir"]);
 
